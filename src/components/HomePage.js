@@ -1,7 +1,6 @@
-import './App.css';
-import { useState } from 'react';
+import React, { useState } from "react";
 
-function App() {
+export const HomePage = ({ labelOn, labelOff }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const onChange = () => {
@@ -10,13 +9,12 @@ function App() {
   return (
     <>
       <p>welcome To DCX!</p>
-      <h1>Engineering Experience 123456!</h1>
+      <h1>Engineering Experience off 123456!</h1>
       <label>
         <input type="checkbox" checked={isChecked} onChange={onChange} />
-        {isChecked ? 'Oksana' : 'Ali'}
+        {/* by default Off will be displayed */}
+        {isChecked ? labelOn : labelOff} 
       </label>
     </>
   );
-}
-
-export default App;
+};
